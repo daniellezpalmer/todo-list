@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Todo List</title>
+</head>
+
+<body>
+  <form class="" action="/" method="post">
+    <input type="text" name="newestItem" value="">
+    <button type="submit" name="submit">Add new Todo</button>
+  </form>
+  {{#items}}
+    {{^done}}
+    <form class="" action="/{{id}}" method="post">
+      <button type="submit" name="button">Completed</button>
+      <label for="button">{{text}}</label>
+    </form>
+    {{/done}}
+  {{/items}}
+  <hr>
+  <ul>
+    {{#items}}
+      {{#done}}
+        <li>{{text}}</li>
+      {{/done}}
+    {{/items}}
+  </ul>
+</body>
+
+</html>
